@@ -724,7 +724,13 @@
             return ['+'];
         }
 
-        return combination.split('+');
+        var combo = combination.split('+');
+        if ( combo.length > 1 ) { 
+            if ( combo[1] === "plus"  ) { combo[1] = "+"; }
+            if ( combo[1] === "minus" ) { combo[1] = "-"; }
+        }
+        
+        return combo;
     }
 
     /**
